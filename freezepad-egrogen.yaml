@@ -1,51 +1,47 @@
+units:
+  # Proxy Spacing Variables
+  kx: cx
+  ky: cy
+  # Padding Variables
+  px: kx + 2
+  py: ky + 2
+
 points:
   zones:
     matrix:
-      anchor:
-        shift: [100, 100]
+      key:
+        padding: 1ky
+        spread: 1kx
       columns:
         col1:
-          key:
-            column_net: P1
         col2:
-          key:
-            column_net: P0
         col3:
-          key:
-            column_net: P2
         col4:
-          key:
-            column_net: P3
       rows:
         row1:
-          row_net: P4
         row2:
-          row_net: P5
         row3:
-          row_net: P6
         row4:
-          row_net: P7
 
 outlines:
-  body:
+  raw:
     - what: rectangle
       where: true
-      size: 18       # <--- REQUIRED: Choc keys are usually 18mm x 18mm
-      bound: true
-      fillet: 2
+      size: [kx, ky]
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+  
+# SIMPLIFIED BOARD OUTLINE
+  board:
+    - what: rectangle
+      where: true
+      size: [px, py]  # Use the padded size (kx + 2)
+      fillet: 2       # Round the corners
 
-
-pcbs:
-  main_pcb:
-    outlines:
-      main:
-        outline: body # References the outline defined in the previous step
-    footprints:
-      switches:
-        what: choc    # Uses the built-in Choc V1 footprint
-        where: true   # Places switches at every point
-        params:
-          from: "{{column_net}}" # Connects pin 1 to the column net
-          to: "{{row_net}}"      # Connects pin 2 to the row net
-          keycaps: true          # Adds keycap outlines to the silk/Fab layers
-          reverse: true          # adds holes for reversible hotswap sockets
+  # Optional: Preview combo to see keys inside the board
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys
