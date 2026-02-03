@@ -84,20 +84,22 @@ pcbs:
       choc_hotswap:
         what: choc
         where: true
+        adjust:
+          rotate: 180
         params:
-          from: "{{name}}"
-          to: GND
-          keycaps: true
-          reverse: false
-          hotswap: true
+            from: "{{name}}"
+            to: GND
+            keycaps: true
+            reverse: false
+            hotswap: true
 
       # 2. CONTROLLER (Nice!Nano)
       controller:
         what: nicenano
         where:
           ref: matrix_col2_row2
-          shift: [0.5kx, 0]
-          rotate: 90
+          shift: [1.325cx, 2.7cx]
+          rotate: 180
         params:
           side: B
           orientation: up
@@ -134,7 +136,7 @@ pcbs:
         what: ceoloide/battery_connector_jst_ph_2
         where:
           ref: matrix_col2_row2
-          shift: [0.5kx + 8, -1.2ky]
+          shift: [-0.3px, 2.95py]
           rotate: -90
 
         params:
@@ -145,7 +147,7 @@ pcbs:
         what: slider
         where:
           ref: matrix_col2_row2
-          shift: [0.5kx - 8, -1.2ky]
+          shift: [0.1px, 3.08py]
         params:
           side: B
           from: B+
@@ -156,7 +158,8 @@ pcbs:
         what: button
         where:
           ref: matrix_col2_row2
-          shift: [0.5kx, 1.2ky]
+          shift: [2.02px, 1.98py]
+          rotate: 180
         params:
           side: B
           from: GND
