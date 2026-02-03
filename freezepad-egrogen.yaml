@@ -97,9 +97,10 @@ pcbs:
         where:
           ref: matrix_col2_row2
           shift: [0.5kx, 0]
-          rotate: -90
+          rotate: 90
         params:
-          orientation: down
+          side: B
+          orientation: up
           # Pin mapping - Left side of Controller (Top -> Down)
           P0: matrix_col1_row1
           P1: matrix_col1_row2
@@ -134,6 +135,8 @@ pcbs:
         where:
           ref: matrix_col2_row2
           shift: [0.5kx + 8, -1.2ky]
+          rotate: -90
+
         params:
           side: B
 
