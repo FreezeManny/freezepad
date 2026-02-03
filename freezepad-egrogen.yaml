@@ -85,14 +85,12 @@ pcbs:
 
       # 2. CONTROLLER (Nice!Nano)
       controller:
-        what: nicenano
+        what: ceoloide/mcu_nice_nano
         where:
           ref: matrix_col2_row2
           shift: [0.5kx, 0]
           rotate: -90
         params:
-          orientation: down
-          
           # Pin mapping - Left side of Controller (Top -> Down)
           P20: matrix_col1_row1
           P5: matrix_col1_row2
@@ -118,15 +116,11 @@ pcbs:
           P9: matrix_col4_row4
 
       # 3. BATTERY CONNECTOR (JST)
-      battery_connector:
-        what: reversible_battery
+      battery:
+        what: ceoloide/battery_connector_jst_ph_2
         where:
           ref: matrix_col2_row2
           shift: [0.5kx + 8, -1.2ky]
-        params:
-          side: F
-          neg: GND
-          pos: B+
 
       # 4. POWER SWITCH (Slider)
       power_switch:
@@ -141,7 +135,7 @@ pcbs:
 
       # 5. RESET BUTTON
       reset:
-        what: button2
+        what: ceoloide/reset_switch_smd_side
         where:
           ref: matrix_col2_row2
           shift: [0.5kx, 1.2ky]
