@@ -19,29 +19,34 @@ points:
             row2: {name: matrix_col1_row2}
             row3: {name: matrix_col1_row3}
             row4: {name: matrix_col1_row4}
+            row5: {name: matrix_col1_row5}
         col2:
           rows:
             row1: {name: matrix_col2_row1}
             row2: {name: matrix_col2_row2}
             row3: {name: matrix_col2_row3}
             row4: {name: matrix_col2_row4}
+            row5: {name: matrix_col2_row5}
         col3:
           rows:
             row1: {name: matrix_col3_row1}
             row2: {name: matrix_col3_row2}
             row3: {name: matrix_col3_row3}
             row4: {name: matrix_col3_row4}
+            row5: {name: matrix_col3_row5}
         col4:
           rows:
             row1: {name: matrix_col4_row1}
             row2: {name: matrix_col4_row2}
             row3: {name: matrix_col4_row3}
             row4: {name: matrix_col4_row4}
+            row5: {name: matrix_col4_row5}
       rows:
         row1:
         row2:
         row3:
         row4:
+        row5:
 
 outlines:
   raw:
@@ -81,7 +86,7 @@ pcbs:
           from: "{{name}}"
           to: GND
           keycaps: true
-          reverse: true
+          reverse: false
           hotswap: true
 
       # 2. CONTROLLER (Nice!Nano)
@@ -115,6 +120,12 @@ pcbs:
           P4: matrix_col4_row2
           P16: matrix_col4_row3
           P9: matrix_col4_row4
+          
+          # Row 5 assignments
+          P7: matrix_col1_row5
+          P8: matrix_col2_row5
+          P13: matrix_col3_row5
+          P11: matrix_col4_row5
 
       # 3. BATTERY CONNECTOR (JST)
       battery:
