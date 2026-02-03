@@ -67,7 +67,8 @@ outlines:
       name: keys
 
 pcbs:
-  abyss_style_pcb:
+  freezepad-pcb:
+    template: kicad8
     outlines:
       main:
         outline: board
