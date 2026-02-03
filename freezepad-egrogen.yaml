@@ -144,6 +144,8 @@ pcbs:
 
         params:
           side: B
+          BAT_P: B+
+          BAT_N: GND
 
       # 4. POWER SWITCH (Slider)
       power_switch:
