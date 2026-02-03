@@ -9,6 +9,8 @@ units:
 points:
   zones:
     matrix:
+      anchor:
+        shift: [0, 0]  # Centers a 4-column, 5-row matrix
       key:
         padding: 1ky
         spread: 1kx
@@ -81,7 +83,6 @@ pcbs:
       # 1. SWITCHES (Direct Pin / No Diodes)
       choc_hotswap:
         what: choc
-        where: true
         params:
           from: "{{name}}"
           to: GND
@@ -91,42 +92,40 @@ pcbs:
 
       # 2. CONTROLLER (Nice!Nano)
       controller:
-        what: ceoloide/mcu_nice_nano
+        what: nicenano
         where:
           ref: matrix_col2_row2
           shift: [0.5kx, 0]
           rotate: -90
         params:
           # Pin mapping - Left side of Controller (Top -> Down)
-          P20: matrix_col1_row1
-          P5: matrix_col1_row2
-          P15: matrix_col1_row3
-          P2: matrix_col1_row4
+          P0: matrix_col1_row1
+          P1: matrix_col1_row2
+          P2: matrix_col1_row3
+          P3: matrix_col1_row4
+          P4: matrix_col1_row5
           
           # Left side continued
-          P3: matrix_col2_row1
+          P5: matrix_col2_row1
           P6: matrix_col2_row2
-          P21: matrix_col2_row3
-          P18: matrix_col2_row4
+          P7: matrix_col2_row3
+          P8: matrix_col2_row4
+          P9: matrix_col2_row5
           
-          # Left side bottom + Right side top
-          P14: matrix_col3_row1
-          P1: matrix_col3_row2
-          P19: matrix_col3_row3
-          P10: matrix_col3_row4
+          # Right side top
+          P10: matrix_col3_row1
+          P14: matrix_col3_row2
+          P15: matrix_col3_row3
+          P16: matrix_col3_row4
+          P18: matrix_col3_row5
           
           # Right side continued
-          P0: matrix_col4_row1
-          P4: matrix_col4_row2
-          P16: matrix_col4_row3
-          P9: matrix_col4_row4
+          P19: matrix_col4_row1
+          P20: matrix_col4_row2
+          P21: matrix_col4_row3
+          P31: matrix_col4_row4
+          P32: matrix_col4_row5
           
-          # Row 5 assignments
-          P7: matrix_col1_row5
-          P8: matrix_col2_row5
-          P13: matrix_col3_row5
-          P11: matrix_col4_row5
-
       # 3. BATTERY CONNECTOR (JST)
       battery:
         what: ceoloide/battery_connector_jst_ph_2
@@ -147,7 +146,7 @@ pcbs:
 
       # 5. RESET BUTTON
       reset:
-        what: ceoloide/reset_switch_smd_side
+        what: button
         where:
           ref: matrix_col2_row2
           shift: [0.5kx, 1.2ky]
