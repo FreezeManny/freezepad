@@ -83,6 +83,7 @@ pcbs:
       # 1. SWITCHES (Direct Pin / No Diodes)
       choc_hotswap:
         what: choc
+        where: true
         params:
           from: "{{name}}"
           to: GND
@@ -98,6 +99,7 @@ pcbs:
           shift: [0.5kx, 0]
           rotate: -90
         params:
+          orientation: down
           # Pin mapping - Left side of Controller (Top -> Down)
           P0: matrix_col1_row1
           P1: matrix_col1_row2
@@ -132,6 +134,8 @@ pcbs:
         where:
           ref: matrix_col2_row2
           shift: [0.5kx + 8, -1.2ky]
+        params:
+          side: B
 
       # 4. POWER SWITCH (Slider)
       power_switch:
@@ -140,7 +144,7 @@ pcbs:
           ref: matrix_col2_row2
           shift: [0.5kx - 8, -1.2ky]
         params:
-          side: F
+          side: B
           from: B+
           to: RAW
 
@@ -151,6 +155,6 @@ pcbs:
           ref: matrix_col2_row2
           shift: [0.5kx, 1.2ky]
         params:
-          side: F
+          side: B
           from: GND
           to: RST
