@@ -14,9 +14,29 @@ points:
         spread: 1kx
       columns:
         col1:
+          rows:
+            row1: {name: matrix_col1_row1}
+            row2: {name: matrix_col1_row2}
+            row3: {name: matrix_col1_row3}
+            row4: {name: matrix_col1_row4}
         col2:
+          rows:
+            row1: {name: matrix_col2_row1}
+            row2: {name: matrix_col2_row2}
+            row3: {name: matrix_col2_row3}
+            row4: {name: matrix_col2_row4}
         col3:
+          rows:
+            row1: {name: matrix_col3_row1}
+            row2: {name: matrix_col3_row2}
+            row3: {name: matrix_col3_row3}
+            row4: {name: matrix_col3_row4}
         col4:
+          rows:
+            row1: {name: matrix_col4_row1}
+            row2: {name: matrix_col4_row2}
+            row3: {name: matrix_col4_row3}
+            row4: {name: matrix_col4_row4}
       rows:
         row1:
         row2:
@@ -33,15 +53,99 @@ outlines:
       where: true
       size: [kx-0.5,ky-0.5]
   
-# SIMPLIFIED BOARD OUTLINE
+  # SIMPLIFIED BOARD OUTLINE
   board:
     - what: rectangle
       where: true
-      size: [px, py]  # Use the padded size (kx + 2)
-      fillet: 2       # Round the corners
+      size: [px, py]
+      fillet: 2
 
-  # Optional: Preview combo to see keys inside the board
+  # Preview combo for the outline view
   combo:
     - name: board
     - operation: subtract
       name: keys
+
+pcbs:
+  abyss_style_pcb:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      # 1. SWITCHES (Direct Pin / No Diodes)
+      choc_hotswap:
+        what: choc
+        where: true
+        params:
+          from: "{{name}}"
+          to: GND
+          keycaps: true
+          reverse: true
+          hotswap: true
+
+      # 2. CONTROLLER (Nice!Nano)
+      controller:
+        what: nicenano
+        where:
+          ref: matrix_col2_row2
+          shift: [0.5kx, 0]
+          rotate: -90
+        params:
+          orientation: down
+          
+          # Pin mapping - Left side of Controller (Top -> Down)
+          P20: matrix_col1_row1
+          P5: matrix_col1_row2
+          P15: matrix_col1_row3
+          P2: matrix_col1_row4
+          
+          # Left side continued
+          P3: matrix_col2_row1
+          P6: matrix_col2_row2
+          P21: matrix_col2_row3
+          P18: matrix_col2_row4
+          
+          # Left side bottom + Right side top
+          P14: matrix_col3_row1
+          P1: matrix_col3_row2
+          P19: matrix_col3_row3
+          P10: matrix_col3_row4
+          
+          # Right side continued
+          P0: matrix_col4_row1
+          P4: matrix_col4_row2
+          P16: matrix_col4_row3
+          P9: matrix_col4_row4
+
+      # 3. BATTERY CONNECTOR (JST)
+      battery_connector:
+        what: reversible_battery
+        where:
+          ref: matrix_col2_row2
+          shift: [0.5kx + 8, -1.2ky]
+        params:
+          side: F
+          neg: GND
+          pos: B+
+
+      # 4. POWER SWITCH (Slider)
+      power_switch:
+        what: slider
+        where:
+          ref: matrix_col2_row2
+          shift: [0.5kx - 8, -1.2ky]
+        params:
+          side: F
+          from: B+
+          to: RAW
+
+      # 5. RESET BUTTON
+      reset:
+        what: button2
+        where:
+          ref: matrix_col2_row2
+          shift: [0.5kx, 1.2ky]
+        params:
+          side: F
+          from: GND
+          to: RST
