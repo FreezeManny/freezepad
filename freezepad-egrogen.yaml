@@ -104,32 +104,35 @@ pcbs:
           side: B
           orientation: up
           # Pin mapping - Left side of Controller (Top -> Down)
-          P0: matrix_col1_row1
-          P1: matrix_col1_row2
-          P2: matrix_col1_row3
-          P3: matrix_col1_row4
-          P4: matrix_col1_row5
-          
-          # Left side continued
-          P5: matrix_col2_row1
-          P6: matrix_col2_row2
-          P7: matrix_col2_row3
-          P8: matrix_col2_row4
-          P9: matrix_col2_row5
-          
-          # Right side top
+          # Row 1
+          P2:  matrix_col1_row1
+          P7:  matrix_col2_row1
           P10: matrix_col3_row1
-          P14: matrix_col3_row2
-          P15: matrix_col3_row3
-          P16: matrix_col3_row4
-          P18: matrix_col3_row5
-          
-          # Right side continued
-          P19: matrix_col4_row1
-          P20: matrix_col4_row2
-          P21: matrix_col4_row3
-          P31: matrix_col4_row4
-          P32: matrix_col4_row5
+          P18: matrix_col4_row1
+
+          # Row 2
+          P3:  matrix_col1_row2
+          P8:  matrix_col2_row2
+          P16: matrix_col3_row2
+          P19: matrix_col4_row2
+
+          # Row 3
+          P4:  matrix_col1_row3
+          P9:  matrix_col2_row3
+          P14: matrix_col3_row3
+          P20: matrix_col4_row3
+
+          # Row 4
+          P5:  matrix_col1_row4 
+          P31:  matrix_col2_row4
+          P15: matrix_col3_row4
+          P21: matrix_col4_row4
+
+          # Row 5
+          P6:  matrix_col1_row5
+          P32:  matrix_col2_row5
+          P0: matrix_col3_row5
+          P1: matrix_col4_row5
           
       # 3. BATTERY CONNECTOR (JST)
       battery:
