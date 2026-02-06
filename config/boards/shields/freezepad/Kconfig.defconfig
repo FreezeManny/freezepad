@@ -1,4 +1,7 @@
+if SHIELD_FREEZEPAD
+
 config ZMK_KEYBOARD_NAME
     default "FreezePad"
+
 endif
 
