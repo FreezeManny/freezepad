@@ -1,0 +1,4 @@
+config ZMK_KEYBOARD_NAME
+    default "FreezePad"
+endif
+
