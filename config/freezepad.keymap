@@ -39,11 +39,11 @@
             // | ALT  |  ~  |  `  |  -  |  =  |
 
             bindings = <
-&kp TAB     &kp EXCL    &kp AT     &kp HASH
-&kp DLLR    &kp LCTRL   &kp PRCNT  &kp CARET
-&kp AMPS    &kp ASTRK   &kp LGUI   &kp LPAR
-&kp RPAR    &kp LBKT    &kp RBKT   &kp LSHIFT
-&kp LBRACE  &kp RBRACE  &kp BSLH   &kp PIPE
+&trans    &trans    &trans     &trans
+&trans    &trans    &trans     &trans
+&trans    &trans    &trans     &trans
+&trans    &trans    &trans     &trans
+&trans    &trans    &trans     &trans
             >;
         };
     };
