@@ -15,18 +15,18 @@
 
         FlightSim {
             // -----------------------------------------------------------------------------------------
-            // |  A  |  B  |  C  |  D  |
-            // |  E  |  F  |  G  |  H  |
-            // |  I  |  J  |  K  |  L  |
-            // |  M  |  N  |  O  |  P  |
-            // |  Q  |  R  |  S  |  T  |
+            // | TAB  |  Q  |  W  |  E  |  R  |
+            // | CTRL |  A  |  S  |  D  |  F  |
+            // | GUI  |  Z  |  X  |  C  |  V  |
+            // | SHFT |  1  |  2  |  3  |  4  |
+            // | ALT  |  M  | SPC | ENT | BSPC|
 
             bindings = <
-&kp A  &kp B  &kp C  &kp D
-&kp E  &kp F  &kp G  &kp H
-&kp I  &kp J  &kp K  &kp L
-&kp M  &kp N  &kp O  &kp P
-&kp Q  &kp R  &kp S  &kp T
+&kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans
+&kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans
+&kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp F5
+&kp PAGE_UP      &kp UP_ARROW     &kp PAGE_DOWN    &kp F6
+&kp LEFT         &kp DOWN         &kp RIGHT        &kp F7
             >;
         };
 
