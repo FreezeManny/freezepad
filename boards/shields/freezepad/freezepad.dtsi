@@ -59,6 +59,7 @@
 
             <&gpio1 7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, //SW30
             <&gpio1 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, //SW31
-     };
+            <&gpio1 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //SW32
+   };
 
 };
