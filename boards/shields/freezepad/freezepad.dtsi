@@ -52,12 +52,12 @@
             <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, //matrix_col4_row3 - P20
 
             <&gpio0 5  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, //matrix_col1_row4 - P5
-            <&gpio1 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, //matrix_col2_row4 - P31
+            <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, //matrix_col2_row4 - P31
             <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, //matrix_col3_row4 - P15
             <&gpio0 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, //matrix_col4_row4 - P21
 
             <&gpio0 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, //matrix_col1_row5 - P6
-            <&gpio1 32 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, //matrix_col2_row5 - P32
+            <&gpio1 0  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, //matrix_col2_row5 - P32
             <&gpio0 0  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, //matrix_col3_row5 - P0
             <&gpio0 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //matrix_col4_row5 - P1
     };
