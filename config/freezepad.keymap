@@ -51,7 +51,7 @@
             bindings = <
 &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_CLR  &trans
 &kp KP_NUMLOCK  &trans        &trans      &kp PRINTSCREEN
-&trans          &trans        &trans      &trans
+&trans          &kp KP_N0     &trans      &trans
 &trans          &trans        &trans      &trans
 &trans          &trans        &trans      &kp F12
             >;
