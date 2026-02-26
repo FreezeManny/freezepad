@@ -1,6 +1,7 @@
 # Freezepad
 
-![Pad Image](images/freezepad.jpg)
+![Left](images/left.jpg)
+![Top](images/top.jpg)
 
 This repository contains all files and configuration for the **Freezepad**, a custom wireless 20-key (5×4) low-profile macropad built completely from scratch. The goal was to create the smallest possible macropad footprint — achieved by placing the Nice!Nano v2 controller directly below the switches and eliminating diodes entirely. It runs ZMK firmware and is housed in a custom 3D printed case.
 
@@ -53,7 +54,7 @@ The Freezepad runs on [ZMK Firmware](https://zmk.dev/docs), designed for wireles
 
 ## 3D Printed Case
 
-![Case Image](images/case.jpg)
+![Left](images/right.jpg)
 
 A custom case designed in Fusion360. Source and STEP files are provided in `/case`.
 
