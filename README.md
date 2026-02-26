@@ -69,6 +69,5 @@ A custom case designed in Fusion360. Source and STEP files are provided in `/cas
 ---
 
 ## Build Notes
-
-* **Battery Placement:** The battery sits inside the case, not under the controller. Trim PCB pins flush to ensure it fits.
+* **ControllerPlacement:** The Controller sits under the switches. Ensure that you trim the soldered Pins flush, otherwise swtiches will not plug in flush.
 * **Battery Switch:** The battery switch is mounted on the PCB and accessible from the side of the case.
