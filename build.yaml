@@ -19,10 +19,23 @@
 #
 ---
 include:
+  # --- Bluetooth-only: flash to the keyboard to connect directly to the host ---
+  - board: nice_nano_v2
+    shield: freezepad
+    artifact-name: freezepad_bluetooth
+
+  # --- Dongle + keyboard ---
+  # Keyboard as a split peripheral (talks to the dongle, not the host)
   - board: nice_nano_v2
     shield: freezepad
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: freezepad_peripheral
+  # Dongle: split central, connects to the host
   - board: nice_nano_v2
     shield: freezepad_dongle
+    artifact-name: freezepad_dongle
+
+  # --- Utility: clears bonds/settings when switching between the two modes ---
   - board: nice_nano_v2
     shield: settings_reset
+    artifact-name: settings_reset

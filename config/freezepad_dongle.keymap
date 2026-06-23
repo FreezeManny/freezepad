@@ -1,0 +1,6 @@
+/*
+ * The dongle is the split central, so it holds the keymap. Reuse the same
+ * layers as the standalone/peripheral keyboard from a single source.
+ */
+
+#include "freezepad.keymap"
